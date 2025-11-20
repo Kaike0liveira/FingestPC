@@ -10,12 +10,20 @@ if (-not (Get-Command pyinstaller -ErrorAction SilentlyContinue)) {
   exit 1
 }
 
-# Build single-file exe, include templates and static folders
-pyinstaller --onefile `
-  --add-data "templates;templates" `
-  --add-data "static;static" `
-  --hidden-import sklearn `
-  --hidden-import pandas `
-  run_app.py
+# Prepare add-data entries
+$addDataArgs = "--add-data `"templates;templates`" --add-data `"static;static`"`
 
-Write-Output "Build finished. Dist folder contains the executable (run_app.exe)."
+# include icon if present
+$iconArg = ""
+if (Test-Path "icon.ico") {
+  Write-Output "Found icon.ico, will include it in the bundle and use as exe icon."
+  $addDataArgs += " --add-data `"icon.ico;.`"`
+  $iconArg = "--icon icon.ico"
+} else {
+  Write-Output "icon.ico not found in project root. To include a custom icon, place an icon.ico file in the project root."
+}
+
+# Build single-file exe, include templates and static folders
+pyinstaller --onefile $addDataArgs --hidden-import sklearn --hidden-import pandas $iconArg run_app.py
+
+Write-Output "Build finished. Dist folder contains the executable (run_app.exe). If you included an icon it will be embedded." 

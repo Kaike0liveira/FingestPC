@@ -21,10 +21,24 @@ Opções para transformar a aplicação Flask em um app Android:
 4) Transformar em app nativo com GUI (alternativa)
 - Reescrever a interface com Kivy (Buildozer) ou Toga (BeeWare). Buildozer requer Linux para empacotar APKs.
 
-Instruções rápidas (PWA)
+- Instruções rápidas (PWA)
 - Hospede o projeto (por exemplo, num VPS ou serviço como Railway/Heroku).
 - Certifique-se que `https://` está configurado.
 - Acesse o site pelo Chrome no Android e escolha "Adicionar à tela inicial".
+
+Gerar EXE Windows (offline)
+- Para gerar um EXE que rode o servidor local e abra o navegador, use PyInstaller (script `build_windows.ps1` incluído).
+- Coloque um arquivo `icon.ico` na raiz do projeto se quiser um ícone customizado (opcional). O script detecta e inclui automaticamente.
+
+Exemplo rápido (PowerShell):
+```powershell
+Set-Location "c:\Users\kaike\OneDrive\Área de Trabalho\Fingest\FingestPC"
+.\venv\Scripts\Activate.ps1
+pip install pyinstaller
+.\build_windows.ps1
+```
+
+O EXE resultante (`dist\run_app.exe`) inicia um servidor local e abre o navegador apontando para `http://127.0.0.1:5000` — assim o app roda completamente offline no computador onde for executado.
 
 Instruções rápidas (WebView wrapper)
 - Crie novo projeto Android Studio > Empty Activity.
