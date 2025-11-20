@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fingest</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link rel="manifest" href="/static/manifest.json">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
@@ -170,6 +171,13 @@
       document.addEventListener('click', (e)=>{
         if(e.target.classList && e.target.classList.contains('modal-backdrop')) closeConfirm();
       });
+
+      // register service worker for PWA
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/static/sw.js').catch(function(err){ console.log('SW reg failed', err); });
+        });
+      }
     </script>
   </body>
 </html>

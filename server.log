@@ -156,3 +156,109 @@ sqlite3.OperationalError: no such column: description
 127.0.0.1 - - [19/Nov/2025 23:25:09] "GET /dashboard HTTP/1.1" 200 -
 127.0.0.1 - - [19/Nov/2025 23:25:09] "GET /static/style.css HTTP/1.1" 304 -
 127.0.0.1 - - [19/Nov/2025 23:25:09] "GET /static/uploads/user_1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:28:49] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:28:49] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:28:49] "GET /static/uploads/user_1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:29:17] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:29:17] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:29:17] "GET /static/uploads/user_1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:29:19] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:29:19] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:29:19] "GET /static/uploads/user_1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:29:24] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:29:24] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:29:24] "GET /static/uploads/user_1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:29:25] "GET /add_expense HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:29:25] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:29:25] "GET /static/default-avatar.svg HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:29:26] "GET /export HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:29:39] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:29:39] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:29:39] "GET /static/uploads/user_1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:31:00] "GET /add_expense HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:31:00] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:31:00] "GET /static/default-avatar.svg HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:31:11] "POST /add_expense HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:31:11] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:31:11] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:31:11] "GET /static/uploads/user_1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:31:19] "POST /expense/25/delete HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:31:19] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:31:19] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:31:19] "GET /static/uploads/user_1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [19/Nov/2025 23:31:47] "GET /register HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:31:47] "POST /register HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:31:47] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:31:47] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:31:48] "POST /login HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:31:48] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:31:48] "GET /add_expense HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:31:48] "POST /add_expense HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:31:48] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:31:48] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:31:48] "GET /expense/26/edit HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:31:48] "POST /expense/26/edit HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:31:48] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:31:48] "GET /api/summary HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:31:48] "POST /expense/26/delete HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:31:48] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:31:48] "GET /api/summary HTTP/1.1" 200 -
+ * Detected change in 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 114-561-467
+ * Detected change in 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\tests\\test_app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 114-561-467
+ * Detected change in 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\tests\\test_app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 114-561-467
+ * Detected change in 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\run_app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 114-561-467
+ * Detected change in 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\run_app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 114-561-467
+127.0.0.1 - - [20/Nov/2025 00:06:44] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [20/Nov/2025 00:06:44] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [20/Nov/2025 00:06:44] "GET /static/uploads/user_1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:06:44] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:06:44] "GET /static/manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [20/Nov/2025 00:06:44] "GET /static/sw.js HTTP/1.1" 200 -
+127.0.0.1 - - [20/Nov/2025 00:06:44] "GET /static/default-avatar.svg HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:06:44] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [20/Nov/2025 00:06:44] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:06:44] "GET /static/default-avatar.svg HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:06:44] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [20/Nov/2025 00:07:06] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [20/Nov/2025 00:07:06] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:07:06] "GET /static/uploads/user_1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:07:06] "GET /static/manifest.json HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:07:06] "GET /static/default-avatar.svg HTTP/1.1" 304 -
+ * Detected change in 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\make_icon.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 114-561-467
+ * Detected change in 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\make_icon.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 114-561-467
+127.0.0.1 - - [20/Nov/2025 00:09:30] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [20/Nov/2025 00:09:31] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:09:31] "GET /static/uploads/user_1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:09:31] "GET /static/manifest.json HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:09:31] "GET /static/default-avatar.svg HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:09:33] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [20/Nov/2025 00:09:33] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:09:33] "GET /static/uploads/user_1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:09:33] "GET /static/manifest.json HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:09:33] "GET /static/default-avatar.svg HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:09:34] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [20/Nov/2025 00:09:34] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:09:34] "GET /static/uploads/user_1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:09:34] "GET /static/manifest.json HTTP/1.1" 304 -
+127.0.0.1 - - [20/Nov/2025 00:09:34] "GET /static/default-avatar.svg HTTP/1.1" 304 -

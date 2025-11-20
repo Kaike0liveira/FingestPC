@@ -1,0 +1,151 @@
+328 INFO: PyInstaller: 6.16.0, contrib hooks: 2025.9
+330 INFO: Python: 3.13.9
+351 INFO: Platform: Windows-11-10.0.26200-SP0
+352 INFO: Python environment: C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\venv
+355 INFO: wrote C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\run_app.spec
+390 INFO: Removing temporary files and cleaning cache in C:\Users\kaike\AppData\Local\pyinstaller
+394 INFO: Module search paths (PYTHONPATH):
+['C:\\Users\\kaike\\OneDrive\\햞ea de '
+ 'Trabalho\\Fingest\\FingestPC\\venv\\Scripts\\pyinstaller.exe',
+ 'C:\\Program '
+ 'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\\python313.zip',
+ 'C:\\Program '
+ 'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\\DLLs',
+ 'C:\\Program '
+ 'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\\Lib',
+ 'C:\\Program '
+ 'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0',
+ 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv',
+ 'C:\\Users\\kaike\\OneDrive\\햞ea de '
+ 'Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages',
+ 'C:\\Users\\kaike\\OneDrive\\햞ea de '
+ 'Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\setuptools\\_vendor',
+ 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC']
+1128 INFO: Appending 'datas' from .spec
+1131 INFO: checking Analysis
+1132 INFO: Building Analysis because Analysis-00.toc is non existent
+1132 INFO: Looking for Python shared library...
+1132 INFO: Using Python shared library: C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\python313.dll
+1132 INFO: Running Analysis Analysis-00.toc
+1133 INFO: Target bytecode optimization level: 0
+1133 INFO: Initializing module dependency graph...
+1135 INFO: Initializing module graph hook caches...
+1155 INFO: Analyzing modules for base_library.zip ...
+3492 INFO: Processing standard module hook 'hook-encodings.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+4531 INFO: Processing standard module hook 'hook-heapq.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+5793 INFO: Processing standard module hook 'hook-pickle.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+7328 INFO: Caching module dependency graph...
+7373 INFO: Analyzing C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\run_app.py
+7436 INFO: Processing standard module hook 'hook-_ctypes.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+7498 INFO: Processing standard module hook 'hook-sqlite3.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+8535 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+8537 INFO: SetuptoolsInfo: initializing cached setuptools info...
+12944 INFO: Setuptools: 'typing_extensions' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.typing_extensions'!
+12952 INFO: Processing standard module hook 'hook-setuptools.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+13008 INFO: Processing standard module hook 'hook-platform.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+13013 INFO: Processing pre-safe-import-module hook 'hook-distutils.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+13075 INFO: Processing standard module hook 'hook-sysconfig.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+13082 INFO: Processing pre-safe-import-module hook 'hook-jaraco.functools.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+13083 INFO: Setuptools: 'jaraco.functools' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco.functools'!
+13095 INFO: Processing pre-safe-import-module hook 'hook-more_itertools.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+13097 INFO: Setuptools: 'more_itertools' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.more_itertools'!
+13334 INFO: Processing pre-safe-import-module hook 'hook-packaging.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+13501 INFO: Processing pre-safe-import-module hook 'hook-jaraco.text.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+13503 INFO: Setuptools: 'jaraco.text' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco.text'!
+13515 INFO: Processing standard module hook 'hook-setuptools._vendor.jaraco.text.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+13518 INFO: Processing pre-safe-import-module hook 'hook-importlib_resources.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+13520 INFO: Processing pre-safe-import-module hook 'hook-jaraco.context.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+13521 INFO: Setuptools: 'jaraco.context' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco.context'!
+13748 INFO: Processing pre-safe-import-module hook 'hook-backports.tarfile.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+13749 INFO: Setuptools: 'backports.tarfile' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.backports.tarfile'!
+13852 INFO: Processing standard module hook 'hook-backports.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+13997 INFO: Processing pre-safe-import-module hook 'hook-importlib_metadata.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+13998 INFO: Setuptools: 'importlib_metadata' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.importlib_metadata'!
+14027 INFO: Processing standard module hook 'hook-setuptools._vendor.importlib_metadata.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+14031 INFO: Processing pre-safe-import-module hook 'hook-zipp.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+14032 INFO: Setuptools: 'zipp' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.zipp'!
+14346 INFO: Processing pre-safe-import-module hook 'hook-tomli.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+14347 INFO: Setuptools: 'tomli' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.tomli'!
+14917 INFO: Processing pre-safe-import-module hook 'hook-wheel.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+14919 INFO: Setuptools: 'wheel' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.wheel'!
+15733 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+15829 INFO: Processing standard module hook 'hook-xml.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+16682 INFO: Processing standard module hook 'hook-difflib.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+16911 INFO: Processing standard module hook 'hook-jinja2.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+18225 INFO: Processing standard module hook 'hook-pandas.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+20444 INFO: Processing standard module hook 'hook-numpy.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+23521 INFO: Processing standard module hook 'hook-charset_normalizer.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+24122 INFO: Processing standard module hook 'hook-pytz.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+24720 INFO: Processing standard module hook 'hook-scipy.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+25974 INFO: Processing standard module hook 'hook-pytest.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+26279 INFO: Processing standard module hook 'hook-pygments.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+28767 INFO: Processing standard module hook 'hook-py.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+30198 INFO: Processing standard module hook 'hook-pkg_resources.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+30835 INFO: Processing pre-safe-import-module hook 'hook-platformdirs.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+30836 INFO: Setuptools: 'platformdirs' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.platformdirs'!
+31810 INFO: Processing standard module hook 'hook-scipy.linalg.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+31980 INFO: Processing standard module hook 'hook-scipy.special._ufuncs.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+33525 INFO: Processing standard module hook 'hook-scipy.spatial._ckdtree.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+34015 INFO: Processing standard module hook 'hook-scipy.spatial.transform.rotation.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+35156 INFO: Processing standard module hook 'hook-scipy.stats._stats.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+35767 INFO: Processing standard module hook 'hook-scipy.sparse.csgraph.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+36958 INFO: Processing standard module hook 'hook-scipy.special._ellip_harm_2.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+40522 INFO: Processing standard module hook 'hook-pandas.io.formats.style.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+43362 INFO: Processing standard module hook 'hook-pandas.plotting.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+44163 INFO: Processing standard module hook 'hook-openpyxl.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+44634 INFO: Processing standard module hook 'hook-xml.etree.cElementTree.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+46238 INFO: Processing standard module hook 'hook-pandas.io.clipboard.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+46584 INFO: Processing standard module hook 'hook-dateutil.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+46779 INFO: Processing pre-safe-import-module hook 'hook-six.moves.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+47162 INFO: Processing standard module hook 'hook-xml.dom.domreg.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+47742 INFO: Processing standard module hook 'hook-sklearn.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+49414 INFO: Processing standard module hook 'hook-sklearn.utils.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+50132 INFO: Processing standard module hook 'hook-sklearn.externals.array_api_compat.numpy.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+50191 INFO: Processing standard module hook 'hook-sklearn.externals.array_api_compat.cupy.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+50210 INFO: Processing standard module hook 'hook-sklearn.externals.array_api_compat.torch.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+50312 INFO: Processing standard module hook 'hook-sklearn.externals.array_api_compat.dask.array.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+50532 INFO: Processing standard module hook 'hook-sklearn.metrics.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+54858 INFO: Processing standard module hook 'hook-sklearn.metrics.cluster.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+55069 INFO: Processing standard module hook 'hook-sklearn.cluster.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+55189 INFO: Processing standard module hook 'hook-sklearn.metrics.pairwise.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+55540 INFO: Processing standard module hook 'hook-sklearn.neighbors.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+55669 INFO: Processing standard module hook 'hook-sklearn.linear_model.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+57278 INFO: Processing module hooks (post-graph stage)...
+57418 INFO: Processing standard module hook 'hook-sklearn.tree.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+60003 WARNING: Hidden import "scipy.special._cdflib" not found!
+60510 INFO: Performing binary vs. data reclassification (969 entries)
+60762 INFO: Looking for ctypes DLLs
+60968 INFO: Analyzing run-time hooks ...
+60979 INFO: Including run-time hook 'pyi_rth_setuptools.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+60982 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+60986 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+60989 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+60993 INFO: Including run-time hook 'pyi_rth_pkgres.py' from 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+61060 INFO: Creating base_library.zip...
+61085 INFO: Looking for dynamic libraries
+C:\Users\kaike\OneDrive\횁rea de Trabalho\Fingest\FingestPC\venv\Lib\site-packages\PyInstaller\building\build_main.py:227: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  __import__(package)
+64424 INFO: Extra DLL search directories (AddDllDirectory): ['C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\pandas.libs', 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\numpy.libs', 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\venv\\Lib\\site-packages\\scipy.libs']
+64425 INFO: Extra DLL search directories (PATH): []
+70353 INFO: Warnings written to C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\build\run_app\warn-run_app.txt
+70631 INFO: Graph cross-reference written to C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\build\run_app\xref-run_app.html
+70738 INFO: checking PYZ
+70739 INFO: Building PYZ because PYZ-00.toc is non existent
+70739 INFO: Building PYZ (ZlibArchive) C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\build\run_app\PYZ-00.pyz
+72625 INFO: Building PYZ (ZlibArchive) C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\build\run_app\PYZ-00.pyz completed successfully.
+72714 INFO: checking PKG
+72715 INFO: Building PKG because PKG-00.toc is non existent
+72716 INFO: Building PKG (CArchive) run_app.pkg
+88136 INFO: Building PKG (CArchive) run_app.pkg completed successfully.
+88168 INFO: Bootloader C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\venv\Lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\run.exe
+88169 INFO: checking EXE
+88169 INFO: Building EXE because EXE-00.toc is non existent
+88170 INFO: Building EXE from EXE-00.toc
+88177 INFO: Copying bootloader EXE to C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\dist\run_app.exe
+88227 INFO: Copying icon to EXE
+88273 INFO: Copying 0 resources to EXE
+88273 INFO: Embedding manifest in EXE
+88321 INFO: Appending PKG archive to EXE
+88390 INFO: Fixing EXE headers
+90018 INFO: Building EXE from EXE-00.toc completed successfully.
+90051 INFO: Build complete! The results are available in: C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\dist
