@@ -10,20 +10,35 @@ if (-not (Get-Command pyinstaller -ErrorAction SilentlyContinue)) {
   exit 1
 }
 
-# Prepare add-data entries
-$addDataArgs = "--add-data `"templates;templates`" --add-data `"static;static`"`
+# find pyinstaller executable (prefer venv)
+$pyinstallerCmd = (Get-Command pyinstaller.exe -ErrorAction SilentlyContinue).Source
+if (-not $pyinstallerCmd) {
+  $possible = Join-Path $PSScriptRoot 'venv\Scripts\pyinstaller.exe'
+  if (Test-Path $possible) { $pyinstallerCmd = $possible }
+}
+if (-not $pyinstallerCmd) {
+  Write-Error "pyinstaller not found. Install it in the project's venv or ensure it's on PATH."
+  exit 1
+}
 
-# include icon if present
-$iconArg = ""
-if (Test-Path "icon.ico") {
+# build argument list
+$args = @('--onefile')
+$args += '--add-data'; $args += 'templates;templates'
+$args += '--add-data'; $args += 'static;static'
+
+if (Test-Path (Join-Path $PSScriptRoot 'icon.ico')) {
   Write-Output "Found icon.ico, will include it in the bundle and use as exe icon."
-  $addDataArgs += " --add-data `"icon.ico;.`"`
-  $iconArg = "--icon icon.ico"
+  $args += '--add-data'; $args += 'icon.ico;.'
+  $args += '--icon'; $args += 'icon.ico'
 } else {
   Write-Output "icon.ico not found in project root. To include a custom icon, place an icon.ico file in the project root."
 }
 
-# Build single-file exe, include templates and static folders
-pyinstaller --onefile $addDataArgs --hidden-import sklearn --hidden-import pandas $iconArg run_app.py
+$args += '--hidden-import'; $args += 'sklearn'
+$args += '--hidden-import'; $args += 'pandas'
+$args += 'run_app.py'
+
+Write-Output "Running: $pyinstallerCmd $($args -join ' ')"
+& $pyinstallerCmd @args
 
 Write-Output "Build finished. Dist folder contains the executable (run_app.exe). If you included an icon it will be embedded." 
