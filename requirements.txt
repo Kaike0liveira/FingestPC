@@ -5,3 +5,6 @@ scikit-learn
 python-dotenv
 APScheduler
 werkzeug
+requests
+Flask-WTF
+pytest

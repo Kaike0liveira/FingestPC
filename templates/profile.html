@@ -4,6 +4,7 @@
   <h2>Perfil</h2>
   <img class="profile-photo" src="{% if user.photo %}/static/uploads/{{ user.photo }}{% else %}/static/default-avatar.svg{% endif %}" alt="avatar">
   <form method="post" enctype="multipart/form-data">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <label>Email</label>
     <input name="email" value="{{ user.email }}">
     <label>Nova Senha</label>

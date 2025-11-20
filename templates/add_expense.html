@@ -3,10 +3,17 @@
 <div class="card">
   <h2>Adicionar Gasto</h2>
   <form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <label>Valor (R$)</label>
     <input name="amount" type="number" step="0.01" required>
     <label>Categoria</label>
-    <input name="category" required>
+    <select name="category">
+      <option value="food">food</option>
+      <option value="bills">bills</option>
+      <option value="transport">transport</option>
+      <option value="coffee">coffee</option>
+      <option value="other">other</option>
+    </select>
     <label>Data</label>
     <input name="date" type="date">
     <button class="btn">Salvar</button>

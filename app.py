@@ -9,6 +9,9 @@ from werkzeug.utils import secure_filename
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 from dotenv import load_dotenv
+from flask_wtf import CSRFProtect
+import functools
+import time
 
 load_dotenv()
 
@@ -20,6 +23,44 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = os.environ.get('SECRET_KEY') or 'dev_secret_change_me'
+app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024  # 2 MB upload limit
+
+# Initialize CSRF protection
+csrf = CSRFProtect()
+csrf.init_app(app)
+
+# Simple in-memory rate limiter for sensitive endpoints (per-IP)
+_rate_limits = {}
+
+def rate_limit(key_func, limit=5, per=300):
+    def decorator(f):
+        @functools.wraps(f)
+        def wrapped(*args, **kwargs):
+            key = key_func()
+            now = time.time()
+            window = _rate_limits.setdefault(key, [])
+            # drop old
+            window[:] = [t for t in window if now - t < per]
+            if len(window) >= limit:
+                return 'Too many requests. Try again later.', 429
+            window.append(now)
+            return f(*args, **kwargs)
+        return wrapped
+    return decorator
+
+def _remote_addr():
+    return request.headers.get('X-Forwarded-For', request.remote_addr or 'unknown')
+
+
+def admin_required(f):
+    @functools.wraps(f)
+    def wrapped(*args, **kwargs):
+        u = current_user()
+        if not u or u['role'] != 'admin':
+            flash('Acesso negado.', 'danger')
+            return redirect(url_for('dashboard'))
+        return f(*args, **kwargs)
+    return wrapped
 
 
 def get_db():
@@ -130,7 +171,8 @@ def register():
         count = cur.fetchone()['c']
         role = 'admin' if count == 0 else 'user'
 
-        hashed = generate_password_hash(password)
+        # explicitly set hashing method
+        hashed = generate_password_hash(password, method='pbkdf2:sha256')
         try:
             cur.execute('INSERT INTO users (username, password, email, role) VALUES (?, ?, ?, ?)',
                         (username, hashed, email, role))
@@ -150,6 +192,7 @@ def register():
 
 
 @app.route('/login', methods=['GET', 'POST'])
+@rate_limit(_remote_addr, limit=6, per=300)
 def login():
     if request.method == 'POST':
         username = request.form['username']
@@ -190,6 +233,9 @@ def dashboard():
     cur.execute('SELECT monthly_limit FROM settings WHERE user_id = ?', (user['id'],))
     s = cur.fetchone()
     limit = s['monthly_limit'] if s else 0.0
+    # fetch recent expenses
+    cur.execute('SELECT amount, category, date FROM expenses WHERE user_id = ? ORDER BY date DESC LIMIT 5', (user['id'],))
+    recent = cur.fetchall()
     conn.close()
 
     chart_labels = []
@@ -204,7 +250,7 @@ def dashboard():
 
     prediction, cat_avg = predict_next_month(user['id'])
 
-    return render_template('dashboard.html', user=user, labels=chart_labels, values=chart_values, prediction=prediction, category_avg=cat_avg, limit=limit)
+    return render_template('dashboard.html', user=user, labels=chart_labels, values=chart_values, prediction=prediction, category_avg=cat_avg, limit=limit, recent=recent)
 
 
 @app.route('/add_expense', methods=['GET', 'POST'])
@@ -287,12 +333,8 @@ def profile():
 
 
 @app.route('/admin', methods=['GET'])
+@admin_required
 def admin():
-    user = current_user()
-    if not user or user['role'] != 'admin':
-        flash('Acesso negado.', 'danger')
-        return redirect(url_for('dashboard'))
-
     conn = get_db()
     cur = conn.cursor()
     cur.execute('SELECT id, username, email, role, photo FROM users')
@@ -309,12 +351,11 @@ def admin():
 
 
 @app.route('/admin/set_role', methods=['POST'])
+@admin_required
 def set_role():
-    user = current_user()
-    if not user or user['role'] != 'admin':
-        return jsonify({'error': 'Acesso negado.'}), 403
     target_id = int(request.form['user_id'])
     new_role = request.form['role']
+    user = current_user()
 
     if target_id == user['id'] and new_role != 'admin':
         flash('Você não pode rebaixar seu próprio papel.', 'warning')

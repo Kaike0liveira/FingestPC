@@ -97,6 +97,24 @@ O projeto usa `sqlite` e cria `database.db` no diretório do projeto. Tabelas:
 - Foto de perfil salva em `static/uploads` com nome `user_ID.ext`.
 - Primeiro usuário registrado vira administrador automaticamente.
 
+## Testes automatizados
+
+- Há um script de smoke test `smoke_test.py` que automatiza registro/login/adicionar despesas/export.
+- Para rodar localmente:
+
+```powershell
+# numa janela: rodar o servidor
+python app.py
+
+# noutra janela: rodar smoke test
+.\venv\Scripts\Activate.ps1
+python smoke_test.py --url http://127.0.0.1:5000
+```
+
+## Integração Contínua
+
+Um workflow do GitHub Actions (`.github/workflows/ci.yml`) foi adicionado. Ele instala dependências, inicia o servidor e executa o `smoke_test.py` em pushes e pull requests para `main`.
+
 ## Próximos passos sugeridos
 - Melhorar validações e tratamento de erros.
 - Adicionar testes automáticos.

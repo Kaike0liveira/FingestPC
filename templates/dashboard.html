@@ -23,6 +23,17 @@
     <div class="card">
       <h4>Limite Mensal: R$ {{ limit }}</h4>
     </div>
+    <div class="card">
+      <h4>Últimos Gastos</h4>
+      <table class="table">
+        <thead><tr><th>Valor</th><th>Categoria</th><th>Data</th></tr></thead>
+        <tbody>
+          {% for r in recent %}
+          <tr><td>R$ {{ '%.2f'|format(r['amount']) }}</td><td>{{ r['category'] }}</td><td>{{ r['date'] }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
