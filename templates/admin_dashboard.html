@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+  <h2>Painel Admin</h2>
+  <p>Total de usuários: {{ total_users }}</p>
+  <p>Total gasto no sistema: R$ {{ total_spent }}</p>
+  <table class="table">
+    <thead><tr><th>ID</th><th>Usuário</th><th>Email</th><th>Papel</th><th>Ações</th></tr></thead>
+    <tbody>
+      {% for u in users %}
+      <tr>
+        <td>{{ u.id }}</td>
+        <td>{{ u.username }}</td>
+        <td>{{ u.email }}</td>
+        <td>{{ u.role }}</td>
+        <td>
+          <form method="post" action="/admin/set_role" style="display:inline">
+            <input type="hidden" name="user_id" value="{{ u.id }}">
+            <select name="role">
+              <option value="user" {% if u.role=='user' %}selected{% endif %}>user</option>
+              <option value="admin" {% if u.role=='admin' %}selected{% endif %}>admin</option>
+            </select>
+            <button class="btn small">Atualizar</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

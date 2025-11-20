@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fingest</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="brand">Fingest</div>
+      <div class="nav-right">
+        {% if session.username %}
+        <div class="avatar-dropdown">
+          <img class="avatar" src="{% if user and user.photo %}/static/uploads/{{ user.photo }}{% else %}/static/default-avatar.png{% endif %}" alt="avatar">
+          <div class="dropdown">
+            <a href="/profile">Perfil</a>
+            <a href="/settings">Configurações</a>
+            {% if session.role == 'admin' %}
+            <a href="/admin">Admin</a>
+            {% endif %}
+            <a href="/logout">Sair</a>
+          </div>
+        </div>
+        {% else %}
+        <a class="btn" href="/login">Login</a>
+        {% endif %}
+        <button id="theme-toggle" class="btn small">Tema</button>
+      </div>
+    </nav>
+
+    <main class="container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="flash">
+            {% for category, msg in messages %}
+              <div class="alert {{ category }}">{{ msg }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      {% block content %}{% endblock %}
+    </main>
+
+    <script>
+      const toggle = document.getElementById('theme-toggle');
+      const current = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', current);
+      toggle && toggle.addEventListener('click', () => {
+        const t = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+        localStorage.setItem('theme', t);
+      });
+    </script>
+  </body>
+</html>

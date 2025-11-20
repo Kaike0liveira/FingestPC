@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card auth">
+  <h2>Registrar</h2>
+  <form method="post">
+    <label>Username</label>
+    <input name="username" required>
+    <label>Email</label>
+    <input name="email" type="email">
+    <label>Senha</label>
+    <input name="password" type="password" required>
+    <button class="btn">Registrar</button>
+  </form>
+  <p>Já tem conta? <a href="/login">Entrar</a></p>
+</div>
+{% endblock %}

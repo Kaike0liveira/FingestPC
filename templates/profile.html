@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+  <h2>Perfil</h2>
+  <img class="profile-photo" src="{% if user.photo %}/static/uploads/{{ user.photo }}{% else %}/static/default-avatar.png{% endif %}" alt="avatar">
+  <form method="post" enctype="multipart/form-data">
+    <label>Email</label>
+    <input name="email" value="{{ user.email }}">
+    <label>Nova Senha</label>
+    <input name="password" type="password">
+    <label>Foto</label>
+    <input name="photo" type="file" accept="image/*">
+    <button class="btn">Atualizar</button>
+  </form>
+</div>
+{% endblock %}

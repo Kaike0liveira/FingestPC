@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <h3>Resumo Mensal</h3>
+      <canvas id="chart"></canvas>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <h3>Previsão Próximo Mês</h3>
+      <p class="big">R$ {{ prediction }}</p>
+      <h4>Média por Categoria</h4>
+      <ul>
+        {% for k, v in category_avg.items() %}
+          <li>{{ k }}: R$ {{ v }}</li>
+        {% endfor %}
+      </ul>
+      <a class="btn" href="/add_expense">Adicionar Gasto</a>
+      <a class="btn" href="/export">Exportar Excel</a>
+    </div>
+    <div class="card">
+      <h4>Limite Mensal: R$ {{ limit }}</h4>
+    </div>
+  </div>
+</div>
+
+<script>
+  const labels = {{ labels | tojson }};
+  const data = {{ values | tojson }};
+  const ctx = document.getElementById('chart');
+  if (ctx) {
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Gastos',
+          data: data,
+          borderColor: '#1E3A8A',
+          backgroundColor: 'rgba(30,58,138,0.1)'
+        }]
+      }
+    });
+  }
+</script>
+
+{% endblock %}
