@@ -26,3 +26,6 @@ jobs:
       - name: Run smoke test
         run: |
           python smoke_test.py --url http://127.0.0.1:5000
+      - name: Run edit/delete smoke test
+        run: |
+          python smoke_edit_delete.py --url http://127.0.0.1:5000

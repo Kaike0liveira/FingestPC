@@ -9,7 +9,15 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="brand">Fingest</div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="brand">Fingest</div>
+        <div class="nav">
+          <a href="/">Home</a>
+          <a href="/dashboard">Dashboard</a>
+          <a href="/add_expense">Adicionar</a>
+          <a href="/export">Exportar</a>
+        </div>
+      </div>
       <div class="nav-right">
         {% if session.username %}
         <div class="avatar-dropdown">
@@ -29,6 +37,26 @@
         <button id="theme-toggle" class="btn small">Tema</button>
       </div>
     </nav>
+
+    <div class="loading-overlay" id="loadingOverlay" aria-hidden="true">
+      <div class="loader" role="status" aria-label="Carregando"></div>
+    </div>
+
+    <!-- Modal de confirmação global -->
+    <div id="confirmModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="confirmTitle" style="display:none">
+      <div class="modal-backdrop"></div>
+      <div class="modal-card" role="document">
+        <h3 id="confirmTitle">Confirmação</h3>
+        <p id="confirmText">Tem certeza?</p>
+        <form id="confirmForm" method="post">
+          <input type="hidden" name="csrf_token" id="confirmCsrf">
+          <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px;">
+            <button type="button" class="btn ghost" id="confirmCancel">Cancelar</button>
+            <button type="submit" class="btn primary" id="confirmOk">Confirmar</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <main class="container">
       {% with messages = get_flashed_messages(with_categories=true) %}
@@ -52,6 +80,57 @@
         const t = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', t);
         localStorage.setItem('theme', t);
+      });
+      // loading overlay behavior
+      const overlay = document.getElementById('loadingOverlay');
+      function showLoading() { overlay.classList.add('show'); }
+      function hideLoading() { overlay.classList.remove('show'); }
+
+      // show loader on any form submit or link click (progressive)
+      document.addEventListener('submit', (e) => { showLoading(); });
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest && e.target.closest('a');
+        if (a && a.getAttribute('href') && a.getAttribute('href').startsWith('/') ) {
+          showLoading();
+        }
+      });
+      // hide after page load (in case SPA not used)
+      window.addEventListener('load', hideLoading);
+
+      // Modal confirmation logic for delete actions
+      const confirmModal = document.getElementById('confirmModal');
+      const confirmForm = document.getElementById('confirmForm');
+      const confirmText = document.getElementById('confirmText');
+      const confirmCsrf = document.getElementById('confirmCsrf');
+      const confirmCancel = document.getElementById('confirmCancel');
+
+      function openConfirm({text, action, csrf}){
+        confirmText.textContent = text || 'Tem certeza?';
+        confirmForm.action = action || '';
+        if(csrf) confirmCsrf.value = csrf;
+        confirmModal.style.display = 'block';
+        confirmModal.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeConfirm(){
+        confirmModal.style.display = 'none';
+        confirmModal.setAttribute('aria-hidden', 'true');
+      }
+
+      confirmCancel && confirmCancel.addEventListener('click', (e)=>{ e.preventDefault(); closeConfirm(); });
+
+      document.addEventListener('click', (e)=>{
+        const btn = e.target.closest && e.target.closest('.btn-delete-expense');
+        if(!btn) return;
+        e.preventDefault();
+        const url = btn.getAttribute('data-delete-url');
+        const csrf = btn.getAttribute('data-csrf');
+        openConfirm({ text: 'Tem certeza que deseja remover esta despesa?', action: url, csrf: csrf });
+      });
+
+      // close modal on backdrop click
+      document.addEventListener('click', (e)=>{
+        if(e.target.classList && e.target.classList.contains('modal-backdrop')) closeConfirm();
       });
     </script>
   </body>

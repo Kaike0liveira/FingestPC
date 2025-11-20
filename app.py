@@ -234,7 +234,7 @@ def dashboard():
     s = cur.fetchone()
     limit = s['monthly_limit'] if s else 0.0
     # fetch recent expenses
-    cur.execute('SELECT amount, category, date FROM expenses WHERE user_id = ? ORDER BY date DESC LIMIT 5', (user['id'],))
+    cur.execute('SELECT id, amount, category, date FROM expenses WHERE user_id = ? ORDER BY date DESC LIMIT 5', (user['id'],))
     recent = cur.fetchall()
     conn.close()
 
@@ -403,6 +403,75 @@ def api_summary():
     limit = s['monthly_limit'] if s else 0.0
     conn.close()
     return jsonify({'total': round(float(total), 2), 'limit': round(float(limit), 2)})
+
+
+@app.route('/expense/<int:expense_id>/edit', methods=['GET', 'POST'])
+def edit_expense(expense_id):
+    user = current_user()
+    if not user:
+        return redirect(url_for('login'))
+
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute('SELECT * FROM expenses WHERE id = ?', (expense_id,))
+    exp = cur.fetchone()
+    if not exp:
+        conn.close()
+        flash('Despesa não encontrada.', 'danger')
+        return redirect(url_for('dashboard'))
+
+    # permission: owner or admin
+    if user['role'] != 'admin' and exp['user_id'] != user['id']:
+        conn.close()
+        flash('Sem permissão para editar esta despesa.', 'danger')
+        return redirect(url_for('dashboard'))
+
+    if request.method == 'POST':
+        try:
+            amount = float(request.form.get('amount', '0').replace(',', '.'))
+        except ValueError:
+            flash('Valor inválido.', 'danger')
+            return redirect(url_for('edit_expense', expense_id=expense_id))
+        category = request.form.get('category', '').strip()
+        date_str = request.form.get('date', '').strip() or exp['date']
+
+        cur.execute('UPDATE expenses SET amount = ?, category = ?, date = ? WHERE id = ?',
+                (amount, category, date_str, expense_id))
+        conn.commit()
+        conn.close()
+        flash('Despesa atualizada.', 'success')
+        return redirect(url_for('dashboard'))
+
+    # GET -> render template
+    conn.close()
+    return render_template('edit_expense.html', expense=exp)
+
+
+@app.route('/expense/<int:expense_id>/delete', methods=['POST'])
+def delete_expense(expense_id):
+    user = current_user()
+    if not user:
+        return redirect(url_for('login'))
+
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute('SELECT * FROM expenses WHERE id = ?', (expense_id,))
+    exp = cur.fetchone()
+    if not exp:
+        conn.close()
+        flash('Despesa não encontrada.', 'danger')
+        return redirect(url_for('dashboard'))
+
+    if user['role'] != 'admin' and exp['user_id'] != user['id']:
+        conn.close()
+        flash('Sem permissão para remover esta despesa.', 'danger')
+        return redirect(url_for('dashboard'))
+
+    cur.execute('DELETE FROM expenses WHERE id = ?', (expense_id,))
+    conn.commit()
+    conn.close()
+    flash('Despesa removida.', 'success')
+    return redirect(url_for('dashboard'))
 
 
 if __name__ == '__main__':

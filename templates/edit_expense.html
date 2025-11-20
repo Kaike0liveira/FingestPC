@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+  <h2>Editar Gasto</h2>
+  <form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>Valor (R$)</label>
+    <input name="amount" type="number" step="0.01" value="{{ expense.amount }}" required>
+    <label>Categoria</label>
+    <select name="category">
+      <option value="food" {% if expense.category=='food' %}selected{% endif %}>food</option>
+      <option value="bills" {% if expense.category=='bills' %}selected{% endif %}>bills</option>
+      <option value="transport" {% if expense.category=='transport' %}selected{% endif %}>transport</option>
+      <option value="coffee" {% if expense.category=='coffee' %}selected{% endif %}>coffee</option>
+      <option value="other" {% if expense.category=='other' %}selected{% endif %}>other</option>
+    </select>
+    <label>Data</label>
+    <input name="date" type="date" value="{{ expense.date }}">
+    <button class="btn primary">Salvar</button>
+    <a class="btn ghost" href="/dashboard">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

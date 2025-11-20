@@ -26,10 +26,19 @@
     <div class="card">
       <h4>Últimos Gastos</h4>
       <table class="table">
-        <thead><tr><th>Valor</th><th>Categoria</th><th>Data</th></tr></thead>
+        <thead><tr><th>Valor</th><th>Categoria</th><th>Data</th><th>Ações</th></tr></thead>
         <tbody>
           {% for r in recent %}
-          <tr><td>R$ {{ '%.2f'|format(r['amount']) }}</td><td>{{ r['category'] }}</td><td>{{ r['date'] }}</td></tr>
+          <tr>
+            <td>R$ {{ '%.2f'|format(r['amount']) }}</td>
+            <td>{{ r['category'] }}</td>
+            <td>{{ r['date'] }}</td>
+            <td>
+              <a class="btn small" href="/expense/{{ r['id'] }}/edit">Editar</a>
+              <a class="btn small" href="/expense/{{ r['id'] }}/edit">Editar</a>
+              <button class="btn small btn-delete-expense" type="button" data-delete-url="/expense/{{ r['id'] }}/delete" data-csrf="{{ csrf_token() }}">Remover</button>
+            </td>
+          </tr>
           {% endfor %}
         </tbody>
       </table>

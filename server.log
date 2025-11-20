@@ -1,0 +1,91 @@
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 114-561-467
+127.0.0.1 - - [19/Nov/2025 23:02:47] "GET /register HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:02:48] "POST /register HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:02:48] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:02:48] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:02:49] "POST /login HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:02:49] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:02:49] "GET /add_expense HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:02:49] "POST /add_expense HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:02:49] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:02:49] "POST /add_expense HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:02:49] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:02:49] "POST /add_expense HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:02:49] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:02:49] "GET /api/summary HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:02:51] "GET /export HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:02:51] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:03:55] "GET /register HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:03:56] "POST /register HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:03:56] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:03:56] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:03:56] "POST /login HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:03:56] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:03:56] "GET /add_expense HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:03:56] "POST /add_expense HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:03:56] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:03:56] "POST /add_expense HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:03:57] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:03:57] "POST /add_expense HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:03:57] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:03:57] "GET /api/summary HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:03:57] "GET /export HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:03:57] "GET /dashboard HTTP/1.1" 200 -
+ * Detected change in 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 114-561-467
+ * Detected change in 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 114-561-467
+ * Detected change in 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 114-561-467
+ * Detected change in 'C:\\Users\\kaike\\OneDrive\\햞ea de Trabalho\\Fingest\\FingestPC\\smoke_edit_delete.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 114-561-467
+127.0.0.1 - - [19/Nov/2025 23:20:59] "GET /register HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:21:00] "POST /register HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:21:00] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:21:00] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:21:01] "POST /login HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:21:01] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:21:01] "GET /add_expense HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:21:01] "POST /add_expense HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:21:01] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:21:01] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:21:01] "GET /expense/22/edit HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:21:01] "POST /expense/22/edit HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\kaike\OneDrive\햞ea de Trabalho\Fingest\FingestPC\app.py", line 439, in edit_expense
+    cur.execute('UPDATE expenses SET amount = ?, category = ?, date = ?, description = ? WHERE id = ?',
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: description
+127.0.0.1 - - [19/Nov/2025 23:21:01] "GET /api/summary HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:21:01] "POST /expense/22/delete HTTP/1.1" 302 -
+127.0.0.1 - - [19/Nov/2025 23:21:01] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2025 23:21:01] "GET /api/summary HTTP/1.1" 200 -
