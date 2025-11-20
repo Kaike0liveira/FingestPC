@@ -16,7 +16,8 @@ import time
 load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(BASE_DIR, 'database.db')
+# Allow overriding the DB path for tests or deployments via env var
+DB_PATH = os.environ.get('FINGEST_DB_PATH') or os.path.join(BASE_DIR, 'database.db')
 UPLOAD_FOLDER = os.path.join(BASE_DIR, 'static', 'uploads')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 

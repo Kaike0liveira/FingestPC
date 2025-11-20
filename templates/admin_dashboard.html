@@ -14,15 +14,12 @@
         <td>{{ u.email }}</td>
         <td>{{ u.role }}</td>
         <td>
-          <form method="post" action="/admin/set_role" style="display:inline">
-            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-            <input type="hidden" name="user_id" value="{{ u.id }}">
-            <select name="role">
-              <option value="user" {% if u.role=='user' %}selected{% endif %}>user</option>
-              <option value="admin" {% if u.role=='admin' %}selected{% endif %}>admin</option>
-            </select>
-            <button class="btn small">Atualizar</button>
-          </form>
+          <input type="hidden" id="csrf_admin_{{ u.id }}" value="{{ csrf_token() }}">
+          <select name="role" id="role_select_{{ u.id }}">
+            <option value="user" {% if u.role=='user' %}selected{% endif %}>user</option>
+            <option value="admin" {% if u.role=='admin' %}selected{% endif %}>admin</option>
+          </select>
+          <button type="button" class="btn small btn-admin-setrole" data-user-id="{{ u.id }}" data-csrf="{{ csrf_token() }}" data-select-id="role_select_{{ u.id }}">Atualizar</button>
         </td>
       </tr>
       {% endfor %}

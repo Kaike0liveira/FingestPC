@@ -28,7 +28,7 @@
             {% if session.role == 'admin' %}
             <a href="/admin">Admin</a>
             {% endif %}
-            <a href="/logout">Sair</a>
+            <a href="/logout" class="btn-logout">Sair</a>
           </div>
         </div>
         {% else %}
@@ -50,6 +50,8 @@
         <p id="confirmText">Tem certeza?</p>
         <form id="confirmForm" method="post">
           <input type="hidden" name="csrf_token" id="confirmCsrf">
+          <input type="hidden" name="user_id" id="confirmUserId">
+          <input type="hidden" name="role" id="confirmRole">
           <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px;">
             <button type="button" class="btn ghost" id="confirmCancel">Cancelar</button>
             <button type="submit" class="btn primary" id="confirmOk">Confirmar</button>
@@ -104,12 +106,19 @@
       const confirmCsrf = document.getElementById('confirmCsrf');
       const confirmCancel = document.getElementById('confirmCancel');
 
-      function openConfirm({text, action, csrf}){
+      function openConfirm({text, action, csrf, method='post', user_id, role}){
         confirmText.textContent = text || 'Tem certeza?';
         confirmForm.action = action || '';
+        confirmForm.method = method || 'post';
         if(csrf) confirmCsrf.value = csrf;
+        if(user_id !== undefined) document.getElementById('confirmUserId').value = user_id;
+        if(role !== undefined) document.getElementById('confirmRole').value = role;
+        // accessibility: save previous focus
+        confirmModal._previousActive = document.activeElement;
         confirmModal.style.display = 'block';
         confirmModal.setAttribute('aria-hidden', 'false');
+        // focus first actionable element
+        document.getElementById('confirmCancel').focus();
       }
 
       function closeConfirm(){
@@ -119,13 +128,42 @@
 
       confirmCancel && confirmCancel.addEventListener('click', (e)=>{ e.preventDefault(); closeConfirm(); });
 
+      // close with Escape
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape' && confirmModal.getAttribute('aria-hidden') === 'false'){
+          closeConfirm();
+        }
+      });
+
       document.addEventListener('click', (e)=>{
         const btn = e.target.closest && e.target.closest('.btn-delete-expense');
-        if(!btn) return;
-        e.preventDefault();
-        const url = btn.getAttribute('data-delete-url');
-        const csrf = btn.getAttribute('data-csrf');
-        openConfirm({ text: 'Tem certeza que deseja remover esta despesa?', action: url, csrf: csrf });
+        if(btn){
+          e.preventDefault();
+          const url = btn.getAttribute('data-delete-url');
+          const csrf = btn.getAttribute('data-csrf');
+          openConfirm({ text: 'Tem certeza que deseja remover esta despesa?', action: url, csrf: csrf, method: 'post' });
+          return;
+        }
+
+        const adminBtn = e.target.closest && e.target.closest('.btn-admin-setrole');
+        if(adminBtn){
+          e.preventDefault();
+          const userId = adminBtn.getAttribute('data-user-id');
+          const csrf = adminBtn.getAttribute('data-csrf');
+          const selectId = adminBtn.getAttribute('data-select-id');
+          const select = document.getElementById(selectId);
+          const role = select ? select.value : 'user';
+          openConfirm({ text: `Confirma alteração de papel para ${role} ?`, action: '/admin/set_role', csrf: csrf, method: 'post', user_id: userId, role: role });
+          return;
+        }
+
+        const logout = e.target.closest && e.target.closest('.btn-logout');
+        if(logout){
+          e.preventDefault();
+          const url = logout.getAttribute('href');
+          openConfirm({ text: 'Deseja sair da sessão?', action: url, method: 'get' });
+          return;
+        }
       });
 
       // close modal on backdrop click

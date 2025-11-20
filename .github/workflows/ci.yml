@@ -23,9 +23,10 @@ jobs:
         run: |
           nohup python app.py &
           sleep 3
-      - name: Run smoke test
+      - name: Run PyTest
+        run: |
+          pytest -q --maxfail=1
+      - name: Run smoke tests
         run: |
           python smoke_test.py --url http://127.0.0.1:5000
-      - name: Run edit/delete smoke test
-        run: |
           python smoke_edit_delete.py --url http://127.0.0.1:5000
