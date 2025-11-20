@@ -40,6 +40,22 @@ pip install pyinstaller
 
 O EXE resultante (`dist\run_app.exe`) inicia um servidor local e abre o navegador apontando para `http://127.0.0.1:5000` — assim o app roda completamente offline no computador onde for executado.
 
+Pacote e instalador (Windows)
+- Para criar um pacote redistribuível ZIP (pronto para distribuir): execute `build_windows.ps1` para gerar o EXE e depois `build_zip.ps1`. O script `build_zip.ps1` cria `Fingest_windows_package.zip` contendo o EXE, `templates/`, `static/` e README.
+- Para criar um instalador `.exe` do Windows, use Inno Setup (instale Inno Setup e adicione `iscc.exe` ao PATH). Em seguida execute `build_installer.ps1` que chamará o compilador com o arquivo `installer.iss`.
+
+Exemplo (ZIP):
+```powershell
+.\build_windows.ps1
+.\build_zip.ps1
+```
+
+Exemplo (Inno):
+```powershell
+# Instale Inno Setup e adicione iscc.exe ao PATH
+.\build_installer.ps1
+```
+
 Instruções rápidas (WebView wrapper)
 - Crie novo projeto Android Studio > Empty Activity.
 - No `AndroidManifest.xml` permitir internet.
