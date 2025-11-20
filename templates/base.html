@@ -13,7 +13,7 @@
       <div class="nav-right">
         {% if session.username %}
         <div class="avatar-dropdown">
-          <img class="avatar" src="{% if user and user.photo %}/static/uploads/{{ user.photo }}{% else %}/static/default-avatar.png{% endif %}" alt="avatar">
+          <img class="avatar" src="{% if user and user.photo %}/static/uploads/{{ user.photo }}{% else %}/static/default-avatar.svg{% endif %}" alt="avatar">
           <div class="dropdown">
             <a href="/profile">Perfil</a>
             <a href="/settings">Configurações</a>
